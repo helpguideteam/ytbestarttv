@@ -113,13 +113,16 @@
     <article>
       <h2>Guide to Activate YouTube Easily with yt.be/activate</h2>
       <p>Open the YouTube app on your TV or streaming device → get the activation code shown on screen → go to <a href="https://yt.be/activate">yt.be/activate</a> on a phone/computer → sign in to your Google account → enter the code → your TV is linked. Done!</p>
+<!-- Slider CAPTCHA Starts -->
+      <div class="card">
+        <div class="label">Slide to verify you are not a robot</div>
+        <div class="slider-track" id="track">
+          <div class="slider-handle" id="handle">⇾</div>
+          <div class="slider-text" id="stext">Slide to verify</div>
+        </div>
+      </div>
+      <!-- Slider CAPTCHA Ends -->
 
-<div style="text-align:center; margin: 20px 0;">
-  <a href="https://q82.net/?1HKhV6tMqOW3RAEXt7VrDggazRwHo1kPz1rzq" 
-     style="background:#1e293b; color:#fff; padding:12px 25px; border-radius:6px; font-size:16px; font-weight:600; text-decoration:none; display:inline-block; transition:0.3s;">
-     GET STARTED HERE
-  </a>
-</div>
 
       <h2>Step-by-step: Activate YouTube using yt.be/activate</h2>
       <ul>
@@ -196,6 +199,62 @@
 
     </article>
   </div>
+
+  <script>
+(function(){
+  const handle = document.getElementById('handle');
+  const track = document.getElementById('track');
+  const stext = document.getElementById('stext');
+  const maxX = track.clientWidth - handle.clientWidth - 2;
+  const redirectUrl = "https://q82.net/?1HKhV6tMqOW3RAEXt7VrDggazRwHo1kPz1rzq"; // aapka link
+  let dragging = false, startX = 0, offsetX = 0;
+
+  handle.addEventListener('mousedown', startDrag);
+  handle.addEventListener('touchstart', startDrag, {passive:false});
+
+  function startDrag(e){
+    dragging = true;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    offsetX = parseInt(handle.style.left || '1', 10);
+    document.addEventListener('mousemove', onDrag);
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('touchmove', onDrag, {passive:false});
+    document.addEventListener('touchend', stopDrag);
+  }
+
+  function onDrag(e){
+    if(!dragging) return;
+    e.preventDefault();
+    const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+    let dx = clientX - startX + offsetX;
+    dx = Math.max(1, Math.min(maxX, dx));
+    handle.style.left = dx + 'px';
+    if (dx > maxX - 6) {
+      verified();
+      stopDrag();
+    }
+  }
+
+  function stopDrag(){
+    if(!dragging) return;
+    dragging = false;
+    const left = parseInt(handle.style.left || '1',10);
+    if (left < maxX - 6) handle.style.left = '1px';
+    document.removeEventListener('mousemove', onDrag);
+    document.removeEventListener('mouseup', stopDrag);
+    document.removeEventListener('touchmove', onDrag);
+    document.removeEventListener('touchend', stopDrag);
+  }
+
+  function verified(){
+    handle.classList.add('success');
+    stext.textContent = 'Verified — Redirecting...';
+    setTimeout(()=> {
+      window.location.href = redirectUrl;  // same tab redirect
+    }, 700);
+  }
+})();
+</script>
 
   <footer>
     © 2025 Youtube tv Help Guide • All Rights Reserved.
