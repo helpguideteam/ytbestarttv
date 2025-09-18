@@ -97,13 +97,82 @@
       font-size: 14px;
     }
 
-    /* Slider CAPTCHA Styles */
-    .card{width:420px;margin:20px auto;padding:18px;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .label{font-weight:700;margin-bottom:12px}
-    .slider-track{height:50px;background:#eef2f6;border-radius:8px;position:relative;overflow:hidden}
-    .slider-handle{width:48px;height:48px;border-radius:6px;background:#fff;border:2px solid #d0d7df;position:absolute;top:1px;left:1px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none}
-    .slider-text{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;color:#7b8694;font-weight:600;pointer-events:none}
-    .success{background:#e6f8ed;border-color:#1e8e3e;color:#1e8e3e}
+/* Slider CAPTCHA Styles */
+.card{
+  width:420px;
+  margin:25px auto;
+  padding:20px;
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+  border:1px solid #e5e7eb;
+}
+
+.label{
+  font-weight:700;
+  margin-bottom:14px;
+  font-size:15px;
+  color:#1f2937;
+  text-align:center;
+}
+
+.slider-track{
+  height:54px;
+  background:linear-gradient(90deg,#f3f4f6,#e5e7eb);
+  border-radius:10px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #d1d5db;
+}
+
+.slider-handle{
+  width:50px;
+  height:50px;
+  border-radius:8px;
+  background:#ffffff;
+  border:2px solid #9ca3af;
+  position:absolute;
+  top:2px;
+  left:2px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  font-size:20px;
+  font-weight:bold;
+  color:#374151;
+  transition:background 0.3s, border-color 0.3s;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.slider-handle:hover{
+  background:#f9fafb;
+  border-color:#6b7280;
+}
+
+.slider-text{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6b7280;
+  font-weight:600;
+  font-size:15px;
+  pointer-events:none;
+  transition:color 0.3s;
+}
+
+.success{
+  background:#dcfce7 !important;
+  border-color:#16a34a !important;
+  color:#16a34a !important;
+}
+
   </style>
 </head>
 <body>
